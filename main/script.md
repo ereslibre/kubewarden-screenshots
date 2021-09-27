@@ -88,10 +88,11 @@ $ kubectl apply -f - <<EOF
 apiVersion: v1
 kind: Pod
 metadata:
-  name: privileged-pod
+  name: unprivileged-pod
 spec:
   containers:
     - name: nginx
       image: nginx:latest
 EOF
+pod/unprivileged-pod created
 ```
