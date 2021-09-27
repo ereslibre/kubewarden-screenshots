@@ -109,7 +109,7 @@ Error from server: error when creating "STDIN": admission webhook "reject-privil
 
 ### Screenshot
 
-![Screenshot](5-policy-rejects-requeste.png)
+![Screenshot](5-policy-rejects-request.png)
 
 ##  Try to create a pod with no privileged containers
 
@@ -129,4 +129,4 @@ pod/unprivileged-pod created
 
 ### Screenshot
 
-![Screenshot](6-policy-accepts-requeste.png)
+![Screenshot](6-policy-accepts-request.png)
