@@ -1,4 +1,9 @@
-- Deploy Kubewarden
+## Workflow
+
+Show how to deploy Kubewarden, search for a policy in the Policy Hub,
+deploy the policy, and test it in 6 steps.
+
+## Deploy Kubewarden
 
   Rationale: straightforward to deploy.
 
@@ -25,7 +30,11 @@ You can start defining cluster admission policies by using the
 For more information checkout https://kubewarden.io/
 ```
 
-- Find a policy
+### Screenshot
+
+![Screenshot](1-deploy.png)
+
+## Find a policy
 
   Rationale: we will now search for a policy that allows us to
   restrict privileged pods in our cluster. The Kubewarden Policy Hub
@@ -34,7 +43,7 @@ For more information checkout https://kubewarden.io/
 
   1. Search in the Kubewarden Hub for "privileged"
 
-- Deploy the pod-privileged-policy policy
+## Deploy the pod-privileged-policy policy
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -56,14 +65,14 @@ EOF
 clusteradmissionpolicy.policies.kubewarden.io/reject-privileged-pods created
 ```
 
-  1. Wait for the policy to be active
+##  Wait for the policy to be active
 
 ```console
 $ kubectl wait --for=condition=PolicyActive clusteradmissionpolicy reject-privileged-pods
 clusteradmissionpolicy.policies.kubewarden.io/reject-privileged-pods condition met
 ```
 
-  1. Try to create a pod with a privileged container
+##  Try to create a pod with a privileged container
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -81,7 +90,7 @@ EOF
 Error from server: error when creating "STDIN": admission webhook "reject-privileged-pods.kubewarden.admission" denied the request: User 'system:admin' cannot schedule privileged containers
 ```
 
-  1. Try to create a pod with no privileged containers
+##  Try to create a pod with no privileged containers
 
 ```console
 $ kubectl apply -f - <<EOF
