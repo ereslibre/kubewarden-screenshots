@@ -8,7 +8,7 @@
 ```console
 $ helm repo add kubewarden https://charts.kubewarden.io
 "kubewarden" has been added to your repositories
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 $ helm install --wait --namespace kubewarden --create-namespace kubewarden-controller kubewarden/kubewarden-controller
 NAME: kubewarden-controller
 LAST DEPLOYED: Mon Sep 27 12:43:43 2021
