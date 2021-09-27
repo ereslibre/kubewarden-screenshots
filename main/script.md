@@ -43,6 +43,15 @@ For more information checkout https://kubewarden.io/
 
   1. Search in the Kubewarden Hub for "privileged"
 
+### Screenshot
+
+There are three screenshots, but only one should be linked (the one
+that fits better in the medium).
+
+- [Policy Hub](2-find-policy/Policy Hub.png)
+- [Policy Hub (complete)](2-find-policy/Policy Hub Complete.png)
+- [Policy Hub (with search for `privileged`)](2-find-policy/Policy Hub Search.png)
+
 ## Deploy the pod-privileged-policy policy
 
 ```console
@@ -65,12 +74,20 @@ EOF
 clusteradmissionpolicy.policies.kubewarden.io/reject-privileged-pods created
 ```
 
+### Screenshot
+
+![Screenshot](3-deploy-policy.png)
+
 ##  Wait for the policy to be active
 
 ```console
 $ kubectl wait --for=condition=PolicyActive clusteradmissionpolicy reject-privileged-pods
 clusteradmissionpolicy.policies.kubewarden.io/reject-privileged-pods condition met
 ```
+
+### Screenshot
+
+![Screenshot](4-wait-for-policy-to-be-active.png)
 
 ##  Try to create a pod with a privileged container
 
@@ -90,6 +107,10 @@ EOF
 Error from server: error when creating "STDIN": admission webhook "reject-privileged-pods.kubewarden.admission" denied the request: User 'system:admin' cannot schedule privileged containers
 ```
 
+### Screenshot
+
+![Screenshot](5-policy-rejects-requeste.png)
+
 ##  Try to create a pod with no privileged containers
 
 ```console
@@ -105,3 +126,7 @@ spec:
 EOF
 pod/unprivileged-pod created
 ```
+
+### Screenshot
+
+![Screenshot](6-policy-accepts-requeste.png)
