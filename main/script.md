@@ -80,3 +80,18 @@ spec:
 EOF
 Error from server: error when creating "STDIN": admission webhook "reject-privileged-pods.kubewarden.admission" denied the request: User 'system:admin' cannot schedule privileged containers
 ```
+
+  1. Try to create a pod with no privileged containers
+
+```console
+$ kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+EOF
+```
