@@ -48,9 +48,9 @@ For more information checkout https://kubewarden.io/
 There are three screenshots, but only one should be linked (the one
 that fits better in the medium).
 
-- [Policy Hub](2-find-policy/Policy Hub.png)
-- [Policy Hub (complete)](2-find-policy/Policy Hub Complete.png)
-- [Policy Hub (with search for `privileged`)](2-find-policy/Policy Hub Search.png)
+- [Policy Hub](./2-find-policy/Policy Hub.png)
+- [Policy Hub (complete)](./2-find-policy/Policy Hub Complete.png)
+- [Policy Hub (with search for `privileged`)](./2-find-policy/Policy Hub Search.png)
 
 ## Deploy the pod-privileged-policy policy
 
